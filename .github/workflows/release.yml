@@ -1,0 +1,26 @@
+name: AutoRelease
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 50
+    - uses: fregante/release-with-changelog@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: v{tag}
+        exclude: '^Meta'
+        commit-template: '- {title} ← {hash}'
+        template: |
+          ### Changelog
+
+          {commits}
+
+          {range}
+
+          💻

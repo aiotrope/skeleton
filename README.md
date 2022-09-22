@@ -1,7 +1,7 @@
 # skeleton
 Basic templates for node project
 
-## Development
+## How I build this template
 
 ### Initialize release-it project
 ```bash
@@ -63,3 +63,19 @@ $ npx husky add .husky/commit-msg 'npx commitlint --edit $1'
 $ npm install -g commitizen cz-conventional-changelog
 $ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
+
+### Commit changes
+```bash
+$ git add . 
+$ git cz # commitizen
+```
+
+### Generate changelog and/or push to remote repo
+```bash
+$ npm run release
+```
+
+### Auto releases using changelog
+- Create `release.yml` in __.github/workflows__ directory.
+- The scripts will generate releases automatically after the code has been pushed to Github.
+- Refer to this [link](https://github.com/marketplace/actions/release-with-changelog#commit-template) for the sample workflow.
