@@ -1,12 +1,16 @@
 # skeleton
-Basic templates for node project
+Conventional commits friendly template for SOME nodejs projects.
 
-## How I build this template
+## Build-up
+
+## Basic project setup
+Create git remote project & clone the remote repo locally.
 
 ### Initialize release-it project
 ```bash
 $ npm init release-it
-# Answer YES to Publish a GitHub Release with every release?
+# Publish a GitHub Release with every release? Yes or 
+# Where to add the release-it config? › .release-it.json
 ```
 
 ### Configure release-it.json and place the release-it as script in package.json
